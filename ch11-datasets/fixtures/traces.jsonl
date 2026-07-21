@@ -1,0 +1,6 @@
+{"trace_id": "t-001", "user_input": "What is the refund window?", "output": "You have 30 days.", "tags": ["billing"]}
+{"trace_id": "t-002", "user_input": "What is the refund window please?", "output": "Refunds are available for 30 days.", "tags": ["billing"]}
+{"trace_id": "t-003", "user_input": "Email me at ada.lovelace@example.com about my charge.", "output": "I emailed ada.lovelace@example.com.", "tags": ["billing", "pii"]}
+{"trace_id": "t-004", "user_input": "How do I reset my password?", "output": "Use the account settings reset link.", "tags": ["auth"]}
+{"trace_id": "t-005", "user_input": "load test ping", "output": "ok", "tags": ["loadtest"]}
+{"trace_id": "t-006", "user_input": "Why was my package delayed?", "output": "Weather delayed the carrier.", "tags": ["shipping"]}

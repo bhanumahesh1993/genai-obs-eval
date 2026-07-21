@@ -1,0 +1,29 @@
+# promptfoo red-team config (illustrative).
+# Run with: npx promptfoo@latest redteam run
+# promptfoo generates adversarial cases from the plugins below and
+# grades responses, aligned to OWASP LLM Top 10 categories. Treat the
+# generated attacks as a starting point, not a certificate of safety.
+
+description: "ch16 red-team of the support assistant"
+
+targets:
+  - id: https
+    config:
+      url: "https://your-app.test/chat"   # your own endpoint only
+      method: POST
+      body: { "message": "{{prompt}}" }
+
+redteam:
+  purpose: >
+    A customer support assistant that must not reveal internal
+    configuration, must refuse unsafe requests, and must not leak
+    data via tools it can call.
+  numTests: 20
+  plugins:
+    - harmful             # toxicity / unsafe content families
+    - pii                 # data exfiltration of personal data
+    - prompt-extraction   # system-prompt leakage
+    - bias                # fairness across demographic slices
+  strategies:
+    - jailbreak           # iterative jailbreak search
+    - prompt-injection    # direct and indirect injection

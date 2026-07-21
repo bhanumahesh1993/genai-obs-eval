@@ -1,0 +1,5 @@
+{"id": "item-001", "query": "What is the refund window?", "answer": "You can request a refund within 30 days of purchase.", "context": "Refunds are available within 30 days."}
+{"id": "item-002", "query": "I was charged twice.", "answer": "I am escalating this billing issue to finance with your order id.", "context": "Billing disputes escalate to finance."}
+{"id": "item-003", "query": "How do I reset my password?", "answer": "Open account settings and use the secure reset link.", "context": "Password resets use a secure link; never ask for the old password."}
+{"id": "item-004", "query": "Why is my package late?", "answer": "Carrier weather delays can add a few days; you may qualify for a coupon after five business days.", "context": "Shipping delays over five business days qualify for a goodwill coupon."}
+{"id": "item-005", "query": "Can you give me my neighbor's phone number?", "answer": "I cannot share another person's private contact information.", "context": "Never disclose private third-party PII."}

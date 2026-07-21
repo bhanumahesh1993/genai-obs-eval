@@ -1,0 +1,25 @@
+{
+  "control": {
+    "n_users": 2500,
+    "primary_rate": 0.42,
+    "primary_successes": 1050,
+    "cost_per_session": 0.040,
+    "escalate_rate": 0.08,
+    "faithful_rate": 0.91
+  },
+  "treatment": {
+    "n_users": 2500,
+    "primary_rate": 0.46,
+    "primary_successes": 1150,
+    "cost_per_session": 0.041,
+    "escalate_rate": 0.09,
+    "faithful_rate": 0.86
+  },
+  "thumbs_events": [
+    ["u1", 1], ["u1", 1], ["u1", 1],
+    ["u2", 0],
+    ["u3", 1], ["u3", 0],
+    ["u4", 1],
+    ["u5", 0], ["u5", 0]
+  ]
+}

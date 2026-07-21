@@ -1,0 +1,12 @@
+[
+  "What is a span in OpenTelemetry?",
+  "How does OpenTelemetry help avoid vendor lock-in?",
+  "Name one honest limitation of Langfuse.",
+  "Name one honest limitation of Arize Phoenix.",
+  "What does OpenInference add on top of OTel?",
+  "Why keep instrumentation portable?",
+  "What is the difference between a gateway and a platform?",
+  "When should a small team prefer managed cloud?",
+  "What pricing shape encourages aggressive sampling?",
+  "What four faces of lock-in should you map before buying?"
+]

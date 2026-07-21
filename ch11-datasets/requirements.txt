@@ -1,0 +1,3 @@
+# Mock mode is stdlib-only.
+# Optional for live synthetic generation:
+# openai>=1.68

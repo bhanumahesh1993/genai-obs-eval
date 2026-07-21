@@ -1,0 +1,3 @@
+{"id": "cand-t-001", "input": "What is the refund window?", "reference": "Refunds are available within 30 days of purchase.", "source": "prod_trace", "tags": ["billing"], "required": ["30 days"], "forbidden": ["14 days"], "trace_id": "t-001"}
+{"id": "cand-t-004", "input": "How do I reset my password?", "reference": "Use the secure reset link in account settings.", "source": "prod_trace", "tags": ["auth"], "required": ["reset", "account"], "forbidden": ["old password"], "trace_id": "t-004"}
+{"id": "syn-001", "input": "When can I get a full refund?", "reference": "Customers may request a full refund within 30 days of the original charge.", "source": "synthetic", "tags": ["billing", "synthetic"], "required": ["30 days"], "forbidden": [], "trace_id": null}

@@ -1,0 +1,8 @@
+{
+  "version": "golden-support-v1",
+  "case_count": 3,
+  "sources": [
+    "prod_trace",
+    "synthetic"
+  ]
+}

@@ -1,0 +1,10 @@
+{"item_id": "item-001", "rater_id": "alice", "rubric_id": "support-v1", "scores": {"faithfulness": 4, "helpfulness": 4, "tone": 3}, "rationale": "demo", "cannot_judge": false}
+{"item_id": "item-001", "rater_id": "bob", "rubric_id": "support-v1", "scores": {"faithfulness": 4, "helpfulness": 4, "tone": 3}, "rationale": "demo", "cannot_judge": false}
+{"item_id": "item-002", "rater_id": "alice", "rubric_id": "support-v1", "scores": {"faithfulness": 4, "helpfulness": 4, "tone": 3}, "rationale": "demo", "cannot_judge": false}
+{"item_id": "item-002", "rater_id": "bob", "rubric_id": "support-v1", "scores": {"faithfulness": 5, "helpfulness": 4, "tone": 3}, "rationale": "demo", "cannot_judge": false}
+{"item_id": "item-003", "rater_id": "alice", "rubric_id": "support-v1", "scores": {"faithfulness": 4, "helpfulness": 4, "tone": 3}, "rationale": "demo", "cannot_judge": false}
+{"item_id": "item-003", "rater_id": "bob", "rubric_id": "support-v1", "scores": {"faithfulness": 4, "helpfulness": 4, "tone": 3}, "rationale": "demo", "cannot_judge": false}
+{"item_id": "item-004", "rater_id": "alice", "rubric_id": "support-v1", "scores": {"faithfulness": 2, "helpfulness": 4, "tone": 3}, "rationale": "demo", "cannot_judge": false}
+{"item_id": "item-004", "rater_id": "bob", "rubric_id": "support-v1", "scores": {"faithfulness": 2, "helpfulness": 4, "tone": 3}, "rationale": "demo", "cannot_judge": false}
+{"item_id": "item-005", "rater_id": "alice", "rubric_id": "support-v1", "scores": {"faithfulness": 2, "helpfulness": 4, "tone": 3}, "rationale": "demo", "cannot_judge": false}
+{"item_id": "item-005", "rater_id": "bob", "rubric_id": "support-v1", "scores": {"faithfulness": 2, "helpfulness": 4, "tone": 3}, "rationale": "demo", "cannot_judge": false}

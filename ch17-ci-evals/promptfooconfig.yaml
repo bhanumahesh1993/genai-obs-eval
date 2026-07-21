@@ -1,0 +1,32 @@
+# The same idea expressed in promptfoo, for teams that want the tool
+# instead of the from-scratch gate. Run: npx promptfoo eval
+# promptfoo is Node-based and shines at cross-model matrix testing;
+# its weakness is that graded assertions still cost judge calls.
+prompts:
+  - "You are a support agent. Answer concisely: {{question}}"
+
+providers:
+  - openai:gpt-5.2          # use any capable model
+  - anthropic:claude-sonnet-5
+
+defaultTest:
+  assert:
+    - type: latency
+      threshold: 4000
+
+tests:
+  - vars:
+      question: "How long do I have to return an item?"
+    assert:
+      - type: icontains
+        value: "30 days"
+  - vars:
+      question: "Do refunds cost anything?"
+    assert:
+      - type: icontains
+        value: "free"
+      - type: not-icontains
+        value: "fee"
+      # A graded check; costs a judge call, so use it sparingly:
+      - type: llm-rubric
+        value: "The reply is polite and does not invent a policy."

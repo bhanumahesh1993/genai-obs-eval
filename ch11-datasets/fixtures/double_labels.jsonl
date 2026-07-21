@@ -1,0 +1,4 @@
+{"id": "cand-t-001", "rater_a": "pass", "rater_b": "pass"}
+{"id": "cand-t-004", "rater_a": "pass", "rater_b": "fail"}
+{"id": "syn-001", "rater_a": "pass", "rater_b": "pass"}
+{"id": "edge-empty", "rater_a": "fail", "rater_b": "fail"}

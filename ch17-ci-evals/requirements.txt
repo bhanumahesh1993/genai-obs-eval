@@ -1,0 +1,6 @@
+# The gate, sampler, and registry use only the Python standard
+# library, so this file is empty by design -- nothing to install to
+# run them. Uncomment what you wire in for real:
+# openai>=1.0
+# pytest>=8.0
+# promptfoo is a Node tool: npm install -g promptfoo

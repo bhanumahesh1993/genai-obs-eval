@@ -1,0 +1,2 @@
+# Mock mode uses only the standard library. Live mode adds the OpenAI SDK.
+openai>=1.68

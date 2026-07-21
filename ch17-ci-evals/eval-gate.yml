@@ -1,0 +1,35 @@
+# Copy to .github/workflows/eval-gate.yml in your repo.
+# A pull-request eval gate: runs the fast smoke suite on every push,
+# the full suite on a schedule. Blocks merge on a real regression.
+name: eval-gate
+
+on:
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * *"   # nightly full run
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    env:
+      EVAL_TIER: smoke     # nightly job overrides this to "full"
+      EVAL_RUNS: "5"       # repeated runs tame the noisy metric
+      EVAL_DELTA: "0.02"   # smallest drop worth blocking a merge
+      # Real judge calls read this from repo secrets, never inline:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r code/ch17-ci-evals/requirements.txt
+      # Cache scorer results so unchanged cases are not re-graded:
+      - uses: actions/cache@v4
+        with:
+          path: code/ch17-ci-evals/.eval-cache
+          key: eval-cache-${{ hashFiles('code/ch17-ci-evals/*.py') }}
+      - name: Run eval gate
+        working-directory: code/ch17-ci-evals
+        run: python gate.py   # exits non-zero on a real regression
