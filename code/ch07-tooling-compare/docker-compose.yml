@@ -1,32 +1,10 @@
-# Optional: self-host real backends later. Mock mode does NOT need this.
-# Confirm current image tags and env vars in each project's docs before use.
+# Langfuse self-hosting now requires a multi-service stack (web, worker,
+# ClickHouse, Redis, and S3-compatible storage). Use the official pinned Compose
+# from https://langfuse.com/self-hosting. This project's mock transport needs no
+# backend at all.
 services:
-  langfuse-server:
-    image: langfuse/langfuse:latest
-    ports:
-      - "3000:3000"
-    environment:
-      DATABASE_URL: postgresql://postgres:postgres@langfuse-db:5432/langfuse
-      NEXTAUTH_SECRET: change-me
-      SALT: change-me
-      NEXTAUTH_URL: http://localhost:3000
-    depends_on:
-      - langfuse-db
-
-  langfuse-db:
-    image: postgres:16
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: langfuse
-    volumes:
-      - langfuse_pg:/var/lib/postgresql/data
-
   phoenix:
-    image: arizephoenix/phoenix:latest
+    image: arizephoenix/phoenix:19.2.0
     ports:
       - "6006:6006"
       - "4317:4317"
-
-volumes:
-  langfuse_pg:

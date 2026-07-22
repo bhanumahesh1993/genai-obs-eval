@@ -20,9 +20,9 @@ written to stdout and to JSONL under `out/`.
 | `run_phoenix.py` | Run the same questions through Phoenix patterns |
 | `export_traces.py` | Side-by-side export summary |
 | `questions.json` | Ten comparable prompts |
-| `docker-compose.yml` | Optional real backends (not used by mock) |
+| `docker-compose.yml` | Optional pinned Phoenix service (not used by mock) |
 
-## Run (mock)
+## Run (mock, default)
 
 ```sh
 python3 run_langfuse.py
@@ -30,7 +30,7 @@ python3 run_phoenix.py
 python3 export_traces.py
 ```
 
-## Live mode (optional)
+## Live model calls (optional)
 
 ```sh
 export OPENAI_API_KEY=...
@@ -38,9 +38,29 @@ python3 run_langfuse.py --live
 python3 run_phoenix.py --live
 ```
 
-For a real Langfuse or Phoenix backend later, set `LANGFUSE_*` or
-`PHOENIX_COLLECTOR_ENDPOINT` and swap the mock SDKs for the official
-packages. `docker-compose.yml` is a starting point for local hosting.
+`--live` replaces the fake model client with OpenAI, but telemetry still uses
+the mock transport and writes JSONL locally.
+
+## Phoenix backend (optional, one command)
+
+The included Compose file starts only Phoenix, pinned to version 19.2.0:
+
+```sh
+docker compose up phoenix
+```
+
+Open <http://localhost:6006>. To send real telemetry there, set
+`PHOENIX_COLLECTOR_ENDPOINT` and replace the mock Phoenix adapter with the
+official Phoenix and OpenInference packages.
+
+## Langfuse backend (optional, external setup)
+
+Langfuse v3+ needs web and worker services plus ClickHouse, Redis, and
+S3-compatible object storage. Use the official pinned self-hosting Compose at
+<https://langfuse.com/self-hosting>, then set `LANGFUSE_*` and replace this
+project's mock Langfuse adapter with the official packages. Expect materially
+higher CPU, memory, and storage costs than this one-container Phoenix exercise.
+Mock mode needs neither backend.
 
 ## Side-by-side: what each tool would show
 
